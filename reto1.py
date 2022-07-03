@@ -17,10 +17,28 @@
  * - Subiré una posible solución al ejercicio el lunes siguiente al de su publicación.
  *
  */"""
+from operator import truediv
+
+
+def anagram (word_one, word_two):
+    if (word_one == word_two) or (len(word_one) != len(word_two)):
+        return False
+    else: 
+        word_one = list(sorted(word_one))
+        word_two = list(sorted(word_two))
+        if word_one == word_two:
+            return True
+        else:
+            return False
 finalize = True
 while finalize:
-    first_word = input("Ingresa la primer palabra : ").lower()
-    second_word = input("Ingresa la segunda palabra : ").lower()
+    first_word = input("Ingresa la primer palabra : ").upper()
+    second_word = input("Ingresa la segunda palabra : ").upper()
+    if anagram(first_word, second_word):
+        print(f"{first_word} y {second_word} son anagrama")
+    else :
+        print(f"{first_word} y {second_word} no son anagrama")
+    """
     if first_word == second_word :
         print("No son Anagrama")
     else :
@@ -32,5 +50,5 @@ while finalize:
             else :
                 print("No son anagrama")
                 break
-        print("Son anagrama")
+        print("Son anagrama")"""
     finalize = False if input("¿finalizar (S/N)? :").lower() == "s" else True
